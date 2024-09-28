@@ -9,7 +9,7 @@ p{
 #id-selector-demo{
   color: green;
 }
-note{
+.note{
   font-size: 20px;
 }
 li[value="4"] {
