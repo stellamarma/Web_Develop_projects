@@ -1,5 +1,5 @@
 .gradient-background {
-    background: linear-gradient(300deg, #497DDE, #2564DC, #259EDB);
+    background: linear-gradient(300deg, #259EDB, #78BBDC, #259EDB);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
   }
@@ -40,12 +40,71 @@
 .custom-link:hover {
     text-decoration: underline; /* Προαιρετικά: προσθήκη υπογράμμισης όταν ο δείκτης είναι πάνω */
 }
+.text-bg-primary{
+    color: #fff !important;
+    background-color: #4FADDB!important;
+}
+.align-items-center {
+    align-items: center !important;
+}
 .bg-dark {
     --bs-bg-opacity: 1;
-    background-color:#2765DC!important;
+    background-color:#4FADDB!important;
 
     
 }
 .navbar-dark{
     --bs-navbar-active-color: black;
+}
+.sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+.bd-navbar {
+    padding: .75rem 0;
+    background-color: transparent;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15), inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+}
+@media (min-width: 992px) {
+    .navbar-expand-lg {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+    }
+}.offcanvas-body {
+    flex-grow: 1;
+    padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
+    overflow-y: auto;
+}
+.cloud{ 
+    margin-top:70px;
+    width:150px;
+    height:120px;
+    background:#ECEFF1;
+    box-shadow: 10px 10px rgba(0,0,0,0.2);
+    border-radius:100px;
+ }
+ .cloud::after, .cloud::before{
+     content:"";
+     position:relative;
+     display:inline-block;
+     background:inherit;
+     border-radius:inherit;
+ }
+ .cloud::after{
+     width:100px;
+     height:100px;
+     top:-220px;
+     left:50px;
+ }
+ .cloud::before{
+     width:180px;
+     height:180px;
+     top: -70px;
+     left:130px;
+ }
+ svg {
+    vertical-align: unset !important;  
+   
 }
