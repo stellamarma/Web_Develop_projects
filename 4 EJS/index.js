@@ -23,10 +23,10 @@ app.get("/", (req, res) => {
 
  
     let type="weekday";
-    let adv="you better work b!";
+    let adv="You better work b!";
     if(day===0 || day===6){
         type="weekend";
-        adv="relax and enjoy your company";
+        adv="Relax and enjoy your company";
     }
 
 
