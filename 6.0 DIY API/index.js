@@ -60,7 +60,7 @@ app.patch("/joke/:id",(req,res)=>{
   const existingJoke = jokes.find((joke) => joke.id === id);
   const replacementJoke = {
     id: id,
-    jokeText: req.body.text || existingJoke.jokeText,
+    jokeText: req.body.text || existingJoke.jokeText,// if req.body.text is null the take  existingJoke.jokeText else take req.body.text
     jokeType: req.body.type || existingJoke.jokeType,
   };
   const searchIndex = jokes.findIndex((joke) => joke.id === id);
