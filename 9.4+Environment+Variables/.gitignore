@@ -1,0 +1,10 @@
+# Αγνόηση του node_modules
+node_modules/
+
+# Αγνόηση αρχείων καταγραφής του npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+.env
