@@ -18,7 +18,9 @@ app.use(
   secret:"TOPSECRET",
   resave:false,
   saveUninitialized:true,
-
+  cookie:{
+    maxAge:10000*60*60*24,//for a day
+  }  
 }));
 
 app.use(passport.initialize());
@@ -70,11 +72,15 @@ app.post("/register", async (req, res) => {
           console.error("Error hashing password:", err);
         } else {
           console.log("Hashed Password:", hash);
-          await db.query(
-            "INSERT INTO users (email, password) VALUES ($1, $2)",
+          const result=await db.query(
+            "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
             [email, hash]
           );
-          res.render("secrets.ejs");
+          const user =result.rows[0];
+          req.login(user,(err)=>{
+            console.log(err)
+            res.redirect("/secrets")
+          })
         }
       });
     }
